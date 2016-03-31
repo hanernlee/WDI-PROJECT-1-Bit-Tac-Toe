@@ -9,7 +9,7 @@ var pokemonTwo;
 
 var turn = 0; //to see if P1 or P2's turn
 var gameOver = 0; //to check if game is over
-var takeTurns = 0; //if game has ended check if p1 or p2 starts
+var takeTurns = 'P1' //if game has ended check if p1 or p2 starts
 
 var newBtn = document.getElementById('newGame');
 var boardGame = document.getElementById('boardContainer');
@@ -38,74 +38,66 @@ var eight = document.getElementById('c3');
                   displayTurn();
                   event.target.className = "X";
                   event.target.appendChild(newCharacterOne(pokemon));
-                  console.log(event.target.id);
                   checkWinner();
                   computer();
+
                 }
               }
             }
-          } else {
+          } else if (gameOver === 1) {
             document.getElementById('results').innerHTML = 'Game Over! Please start a New Game';
             runModal();
           }
-        } else if (gameMode === 1) {
-          if (takeTurns === 0){
+      } else if (gameMode === 1) {
             if (gameOver === 0) {
-              if (event.target.tagName === 'TD') {
-                if(event.target.className === 'X' || event.target.className === 'O') {
+              if (takeTurns === 'P1') {
+                // takeTurns = "P2";
+                if (event.target.tagName === 'TD') {
+                  if(event.target.className === 'X' || event.target.className === 'O') {
                   console.log("This is the same box!");
                 } else {
                   if (turn === 0) {
-                  turn++;
-                  displayTurn();
                   event.target.className = "X";
                   event.target.appendChild(newCharacterOne(pokemon));
-                  console.log(event.target.id);
+                  turn++;
                   checkWinner();
+                  displayTurnTwo();
                   } else if (turn === 1) {
-                  turn--;
-                  displayTurn();
                   event.target.className = "O";
                   event.target.appendChild(newCharacterTwo(pokemonTwo));
-                  console.log(event.target.id);
+                  turn--;
+                  displayTurnTwo();
                   checkWinner();
                   }
                 }
               }
-            } else {
-              document.getElementById('results').innerHTML = 'Game Over! Please start a New Game';
-              runModal();
-            }
-          } else if (takeTurns === 1) {
-            if (gameOver === 0) {
-              takeTurns--;
+            } else if (takeTurns === 'P2') {
+                // takeTurns === 'P1';
               if (event.target.tagName === 'TD') {
-                if(event.target.className === 'X' || event.target.className === 'O') {
-                  console.log("This is the same box!");
+                if (event.target.className === "X" || event.target.className === 'O') {
+                  console.log('This is the same box!');
                 } else {
-                  if (turn === 0) {
-                  turn++;
-                  displayTurn();
-                  event.target.className = "O";
-                  event.target.appendChild(newCharacterTwo(pokemonTwo));
-                  console.log(event.target.id);
-                  checkWinner();
-                  } else if (turn === 1) {
-                  turn--;
-                  displayTurn();
-                  event.target.className = "X";
-                  event.target.appendChild(newCharacterOne(pokemon));
-                  console.log(event.target.id);
-                  checkWinner();
+                    if (turn === 0) {
+                      event.target.className = "O";
+                      event.target.appendChild(newCharacterTwo(pokemonTwo));
+                      turn++;
+                      checkWinner();
+                      displayTurn();
+                    } else {
+                      event.target.className = "X";
+                      event.target.appendChild(newCharacterOne(pokemon));
+                      turn--;
+                      displayTurn();
+                      checkWinner();
+                      }
+                    }
                   }
                 }
-              }
-            } else {
-              document.getElementById('results').innerHTML = 'Game Over! Please start a New Game';
-              runModal();
-            }
-          }
+          } else {
+          document.getElementById('results').innerHTML = 'Game Over! Please start a New Game';
+          runModal();
         }
+      }
       });
 
 
@@ -113,7 +105,6 @@ var eight = document.getElementById('c3');
   var checkWinner = function() {
 
       if ((zero.className === 'X' && one.className === 'X' && two.className === 'X') || (three.className === 'X' && four.className === 'X' && five.className === 'X') || (six.className === 'X' && seven.className === 'X' && eight.className === 'X') || (zero.className === 'X' && three.className === 'X' && six.className === 'X') || (one.className === 'X' && four.className === 'X' && seven.className === 'X') || (two.className === 'X' && five.className === 'X' && eight.className === 'X') || (zero.className === 'X' && four.className === 'X' && eight.className === 'X') || (two.className === 'X' && four.className === 'X' && six.className === 'X')) {
-            takeTurns++;
             gameOver++;
             playerOneScore++;
             displayOne.style.visibility = "hidden";
@@ -121,9 +112,13 @@ var eight = document.getElementById('c3');
             runModal();
             document.getElementById('results').innerHTML = 'P1 Wins!';
             document.getElementById('scoreOne').innerHTML = playerOneScore;
+            if (takeTurns === "P1") {
+              takeTurns = "P2";
+            } else {
+              takeTurns = "P1";
+            }
 
       } else if ((zero.className === 'O' && one.className === 'O' && two.className === 'O') || (three.className === 'O' && four.className === 'O' && five.className === 'O') || (six.className === 'O' && seven.className === 'O' && eight.className === 'O') || (zero.className === 'O' && three.className === 'O' && six.className === 'O') || (one.className === 'O' && four.className === 'O' && seven.className === 'O') || (two.className === 'O' && five.className === 'O' && eight.className === 'O') || (zero.className === 'O' && four.className === 'O' && eight.className === 'O') || (two.className === 'O' && four.className === 'O' && six.className === 'O')) {
-            takeTurns++;
             gameOver++;
             playerTwoScore++;
             displayOne.style.visibility = "hidden";
@@ -131,6 +126,11 @@ var eight = document.getElementById('c3');
             runModal();
             document.getElementById('results').innerHTML = 'P2 Wins!';
             document.getElementById('scoreTwo').innerHTML = playerTwoScore;
+            if (takeTurns === "P1") {
+              takeTurns = "P2";
+            } else {
+              takeTurns = "P1";
+            }
 
       } else if ((zero.className === 'X' || zero.className === 'O') && (one.className === 'X' || one.className === 'O') && (two.className === 'X' || two.className === 'O') && (three.className === 'X' || three.className === 'O') && (four.className === 'X' || four.className === 'O') && (five.className === 'X' || five.className === 'O') && (six.className === 'X' || six.className === 'O') && (seven.className === 'X' || seven.className === 'O') && (eight.className === 'X' || eight.className === 'O')) {
         takeTurns++;
@@ -139,6 +139,11 @@ var eight = document.getElementById('c3');
         displayTwo.style.visibility ="hidden";
         runModal();
         document.getElementById('results').innerHTML = "It's a TIE!";
+        if (takeTurns === "P1") {
+          takeTurns = "P2";
+        } else {
+          takeTurns = "P1";
+        }
       }
     }
 
@@ -148,6 +153,7 @@ var eight = document.getElementById('c3');
     choose = 0 ;
     gameOver = 0;
     turn = 0;
+    // takeTurns = "P1";
     displayOne.style.visibility = "hidden";
     displayTwo.style.visibility ="hidden";
     var allImages = document.getElementsByTagName('TD');
@@ -196,7 +202,6 @@ var choose = 0;
         selectAvatar.onclick = function () {
             if (choose === 0) {
               if (event.target.tagName === "IMG") {
-                console.log(choose);
               if (event.target === pika) {
                 document.getElementById('character').innerHTML = "P1 chose Pikachu";
                 pokemon = 'pikachu';
@@ -221,7 +226,6 @@ var choose = 0;
             }
           } else if (choose === 1) {
             if (event.target.tagName === "IMG") {
-              console.log(choose);
               if (event.target === pika) {
                 document.getElementById('character').innerHTML = "P2 chose Pikachu";
                 pokemonTwo = 'pikachu';
@@ -342,6 +346,20 @@ var displayTurn = function () {
   }
 }
 
+var displayTurnTwo = function () {
+  if (turn === 1) {
+    displayTwo.style.visibility ="hidden";
+    displayTwo.style.transform = "none";
+    displayOne.style.visibility = "visible";
+    displayOne.style.transform = 'translateX(-10em)';
+  } else {
+    displayOne.style.visibility = "hidden";
+    displayOne.style.transform = "none";
+    displayTwo.style.visibility = "visible";
+    displayTwo.style.transform = 'translateX(10em)';
+  }
+}
+
 var computer = function () {
       pokemonTwo = 'bulbasaur';
       var emptyBox = [];
@@ -355,10 +373,8 @@ var computer = function () {
             emptyBox.push(allBoxes[i]);
             }
           }
-          console.log(emptyBox);
 
           var randomBox = emptyBox[Math.floor(Math.random()*emptyBox.length)];
-          console.log(randomBox);
 
           var appendComputer = function() {
             randomBox.className = "O";
@@ -367,7 +383,7 @@ var computer = function () {
             checkWinner();
             displayTurn();
           }
-          setTimeout (appendComputer , 3000);
+          setTimeout (appendComputer , 1000);
           }
         }
 }
@@ -383,6 +399,7 @@ var gameModes = function () {
 
   getGame.onclick = function () {
     if (event.target === oneP ) {
+      getGame.style.display = "none";
       gameMode = 0;
       newGame();
       document.getElementById('scoreOne').innerHTML = 0;
@@ -390,6 +407,7 @@ var gameModes = function () {
       playerOneScore = 0;
       playerTwoScore = 0;
     } else if (event.target === twoP) {
+      getGame.style.display = "none";
       gameMode = 1;
       newGame();
       document.getElementById('scoreOne').innerHTML = 0;
