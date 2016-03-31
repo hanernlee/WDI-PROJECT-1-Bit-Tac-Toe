@@ -13,6 +13,10 @@ There are currently two modes in this game:
 - 1 Player Mode is the defaultMode (default Pokemon always Pikachu)
 - 2 Player Mode (default Pokemon always Bulbasaur)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2e54df93b53808c599f944873a96da634a89b88a
 ### 1 Player Mode
 - Human Player is able to choose any starter Pokemon at any time of the game
 - Human Player always start first
