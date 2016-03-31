@@ -41,5 +41,8 @@ There are currently two modes in this game:
 ## Final Thoughts
 Overall, the project was very challenging but definitely worth the time. Perhaps at a later stage I will look into to creating a smarter AI. Special thanks to DT and Hugh for providing me with assistance!
 
-[Github Repo] (https://github.com/hanernlee/tictactoe)
-[The Game] (http://hanernlee.github.io/tictactoe/)
+Image Source: All Gif images were searched from Google
+
+#### [Github Repo] (https://github.com/hanernlee/tictactoe)
+
+#### [The Game] (http://hanernlee.github.io/tictactoe/)
