@@ -1,6 +1,4 @@
 
-console.log("hey");
-
 var gameMode = 0;
 
 var playerOneScore = 0;
@@ -32,14 +30,18 @@ var eight = document.getElementById('c3');
         if (gameMode === 0) {
           if (gameOver === 0) {
             if (event.target.tagName === 'TD') {
-              if (turn === 0) {
-                turn++;
-                displayTurn();
-                event.target.className = "X";
-                event.target.appendChild(newCharacterOne(pokemon));
-                console.log(event.target.id);
-                checkWinner();
-                computer();
+              if(event.target.className === 'X' || event.target.className === 'O') {
+                console.log("This is the same box!");
+              } else {
+                if (turn === 0) {
+                  turn++;
+                  displayTurn();
+                  event.target.className = "X";
+                  event.target.appendChild(newCharacterOne(pokemon));
+                  console.log(event.target.id);
+                  checkWinner();
+                  computer();
+                }
               }
             }
           } else {
@@ -341,7 +343,7 @@ var displayTurn = function () {
 }
 
 var computer = function () {
-      pokemonTwo = 'pikachu';
+      pokemonTwo = 'bulbasaur';
       var emptyBox = [];
       if (gameOver === 0) {
         if (turn === 1) {
