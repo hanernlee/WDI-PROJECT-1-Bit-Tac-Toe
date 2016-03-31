@@ -10,8 +10,8 @@ As part of the Week 3 WDI Program @ GA, everyone was required to create a game.
 ## Game Mechanics
 
 There are currently two modes in this game:
-- 1 Player Mode (default)
-- 2 Player Mode
+- 1 Player Mode is the defaultMode (default Pokemon always Pikachu)
+- 2 Player Mode (default Pokemon always Bulbasaur)
 
 ### 1 Player Mode
 - Human Player is able to choose any starter Pokemon at any time of the game
