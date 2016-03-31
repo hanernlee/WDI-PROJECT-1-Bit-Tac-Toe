@@ -439,6 +439,7 @@ var gameModes = function () {
   }
 }
 
+window.onload = gameModes();
 modeBtn.addEventListener('click', gameModes);
 
 var exitMode = document.getElementById('closeMode');
