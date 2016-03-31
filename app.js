@@ -35,12 +35,12 @@ var eight = document.getElementById('c3');
               } else {
                 if (turn === 0) {
                   turn++;
-                  displayTurn();
                   event.target.className = "X";
                   event.target.appendChild(newCharacterOne(pokemon));
                   checkWinner();
+                  // debugger;
+                  displayTurn();
                   computer();
-
                 }
               }
             }
@@ -61,12 +61,12 @@ var eight = document.getElementById('c3');
                   event.target.appendChild(newCharacterOne(pokemon));
                   turn++;
                   checkWinner();
-                  displayTurnTwo();
+                  displayTurn();
                   } else if (turn === 1) {
                   event.target.className = "O";
                   event.target.appendChild(newCharacterTwo(pokemonTwo));
                   turn--;
-                  displayTurnTwo();
+                  displayTurn();
                   checkWinner();
                   }
                 }
@@ -82,12 +82,12 @@ var eight = document.getElementById('c3');
                       event.target.appendChild(newCharacterTwo(pokemonTwo));
                       turn++;
                       checkWinner();
-                      displayTurn();
+                      displayTurnTwo();
                     } else {
                       event.target.className = "X";
                       event.target.appendChild(newCharacterOne(pokemon));
                       turn--;
-                      displayTurn();
+                      displayTurnTwo();
                       checkWinner();
                       }
                     }
@@ -107,8 +107,6 @@ var eight = document.getElementById('c3');
       if ((zero.className === 'X' && one.className === 'X' && two.className === 'X') || (three.className === 'X' && four.className === 'X' && five.className === 'X') || (six.className === 'X' && seven.className === 'X' && eight.className === 'X') || (zero.className === 'X' && three.className === 'X' && six.className === 'X') || (one.className === 'X' && four.className === 'X' && seven.className === 'X') || (two.className === 'X' && five.className === 'X' && eight.className === 'X') || (zero.className === 'X' && four.className === 'X' && eight.className === 'X') || (two.className === 'X' && four.className === 'X' && six.className === 'X')) {
             gameOver++;
             playerOneScore++;
-            displayOne.style.visibility = "hidden";
-            displayTwo.style.visibility ="hidden";
             runModal();
             document.getElementById('results').innerHTML = 'P1 Wins!';
             document.getElementById('scoreOne').innerHTML = playerOneScore;
@@ -119,10 +117,9 @@ var eight = document.getElementById('c3');
             }
 
       } else if ((zero.className === 'O' && one.className === 'O' && two.className === 'O') || (three.className === 'O' && four.className === 'O' && five.className === 'O') || (six.className === 'O' && seven.className === 'O' && eight.className === 'O') || (zero.className === 'O' && three.className === 'O' && six.className === 'O') || (one.className === 'O' && four.className === 'O' && seven.className === 'O') || (two.className === 'O' && five.className === 'O' && eight.className === 'O') || (zero.className === 'O' && four.className === 'O' && eight.className === 'O') || (two.className === 'O' && four.className === 'O' && six.className === 'O')) {
+
             gameOver++;
             playerTwoScore++;
-            displayOne.style.visibility = "hidden";
-            displayTwo.style.visibility ="hidden";
             runModal();
             document.getElementById('results').innerHTML = 'P2 Wins!';
             document.getElementById('scoreTwo').innerHTML = playerTwoScore;
@@ -133,10 +130,9 @@ var eight = document.getElementById('c3');
             }
 
       } else if ((zero.className === 'X' || zero.className === 'O') && (one.className === 'X' || one.className === 'O') && (two.className === 'X' || two.className === 'O') && (three.className === 'X' || three.className === 'O') && (four.className === 'X' || four.className === 'O') && (five.className === 'X' || five.className === 'O') && (six.className === 'X' || six.className === 'O') && (seven.className === 'X' || seven.className === 'O') && (eight.className === 'X' || eight.className === 'O')) {
+
         takeTurns++;
         gameOver++;
-        displayOne.style.visibility = "hidden";
-        displayTwo.style.visibility ="hidden";
         runModal();
         document.getElementById('results').innerHTML = "It's a TIE!";
         if (takeTurns === "P1") {
@@ -150,18 +146,21 @@ var eight = document.getElementById('c3');
 
 // new game loops and clear every element
   var newGame = function() {
+    displayTwo.style.transform = 'translateX(0)';
+    displayTwo.style.visibility ="hidden";
+    displayOne.style.transform ="translateX(0)";
+    displayOne.style.visibility = "hidden";
     choose = 0 ;
     gameOver = 0;
     turn = 0;
     // takeTurns = "P1";
-    displayOne.style.visibility = "hidden";
-    displayTwo.style.visibility ="hidden";
     var allImages = document.getElementsByTagName('TD');
 
     for(var i = 0; i < allImages.length ; i++) {
       allImages[i].innerHTML = ''
       allImages[i].removeAttribute('class');
     }
+
     // alternatively can use the below to remove anything with this className
     // var imagesToRemove = document.getElementsByClassName('avatar');
     // while (imagesToRemove.length) {
@@ -321,8 +320,11 @@ restartBtn.addEventListener('click', function() {
   playerOneScore = 0;
   playerTwoScore = 0;
   turn = 0;
-  displayOne.style.visibility = "hidden";
+  takeTurns = "P1";
+  displayTwo.style.transform = 'translateX(0)';
   displayTwo.style.visibility ="hidden";
+  displayOne.style.transform ="translateX(0)";
+  displayOne.style.visibility = "hidden";
   document.getElementById('scoreOne').innerHTML = playerOneScore;
   document.getElementById('scoreTwo').innerHTML = playerTwoScore;
   newGame();
@@ -337,11 +339,13 @@ var displayTurn = function () {
     displayTwo.style.visibility ="hidden";
     displayTwo.style.transform = "none";
     displayOne.style.visibility = "visible";
+    displayOne.style.transform = 'translateX(10em)';
     displayOne.style.transform = 'translateX(-10em)';
   } else {
     displayOne.style.visibility = "hidden";
     displayOne.style.transform = "none";
     displayTwo.style.visibility = "visible";
+    displayTwo.style.transform = 'translateX(-10em)';
     displayTwo.style.transform = 'translateX(10em)';
   }
 }
@@ -351,12 +355,16 @@ var displayTurnTwo = function () {
     displayTwo.style.visibility ="hidden";
     displayTwo.style.transform = "none";
     displayOne.style.visibility = "visible";
+    displayOne.style.transform = 'translateX(10em)';
     displayOne.style.transform = 'translateX(-10em)';
+
   } else {
     displayOne.style.visibility = "hidden";
     displayOne.style.transform = "none";
     displayTwo.style.visibility = "visible";
+    displayTwo.style.transform = 'translateX(-10em)';
     displayTwo.style.transform = 'translateX(10em)';
+
   }
 }
 
@@ -383,7 +391,7 @@ var computer = function () {
             checkWinner();
             displayTurn();
           }
-          setTimeout (appendComputer , 1000);
+          setTimeout (appendComputer , 800);
           }
         }
 }
@@ -401,6 +409,7 @@ var gameModes = function () {
     if (event.target === oneP ) {
       getGame.style.display = "none";
       gameMode = 0;
+      takeTurns = "P1";
       newGame();
       document.getElementById('scoreOne').innerHTML = 0;
       document.getElementById('scoreTwo').innerHTML = 0;
@@ -409,6 +418,7 @@ var gameModes = function () {
     } else if (event.target === twoP) {
       getGame.style.display = "none";
       gameMode = 1;
+      takeTurns = "P1";
       newGame();
       document.getElementById('scoreOne').innerHTML = 0;
       document.getElementById('scoreTwo').innerHTML = 0;
