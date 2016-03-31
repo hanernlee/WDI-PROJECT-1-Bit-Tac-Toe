@@ -1,4 +1,4 @@
-# ABOUT THIS PROJECT
+# ABOUT THE PROJECT
 
 As part of the Week 3 WDI Program @ GA, everyone was required to create a game.
 
