@@ -38,6 +38,21 @@ There are currently two modes in this game:
 - Allows user to switch modes at anytime.
 - Switching modes resets everything
 
+###Touch Compatibility on iOS devices
+CSS:hover does not work on iOS devices, below code used to remove hover ability when user is on an iOS device
+
+Added class no-touch to element with hover
+
+```
+class="no-touch"
+```
+Pasted below script in app.js
+
+```
+if (!("ontouchstart" in document.documentElement)) {
+    document.documentElement.className += "no-touch";
+}
+```
 
 ## Final Thoughts
 Overall, the project was very challenging but definitely worth the time. Perhaps at a later stage I will look into to creating a smarter AI. Special thanks to DT and Hugh for providing me with assistance!
