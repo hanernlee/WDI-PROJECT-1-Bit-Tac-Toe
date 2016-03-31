@@ -66,7 +66,7 @@ td {
   font-size:5em;
 }
 
-td:hover {
+.no-touch td:hover {
   background-color:lightskyblue;
 
 }
