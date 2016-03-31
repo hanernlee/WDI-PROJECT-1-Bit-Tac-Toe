@@ -190,6 +190,7 @@ var charm = document.getElementById('charmander');
 var selectAvatar = document.getElementById('selectAva');
 var chooseBtn = document.getElementById('avatar');
 var choose = 0;
+var closeX = document.getElementById("close");
 
   var chooseAvatar = function () {
     selectAvatar.style.display = "block";
@@ -252,8 +253,9 @@ var choose = 0;
     }
 
 chooseBtn.addEventListener('click', chooseAvatar);
-
-
+closeX.onclick = function(event) {
+      selectAvatar.style.display = "none";
+}
 
 var newCharacterOne = function (pokemon) {
 
@@ -435,3 +437,8 @@ var gameModes = function () {
 }
 
 modeBtn.addEventListener('click', gameModes);
+
+var exitMode = document.getElementById('closeMode');
+exitMode.onclick = function(event) {
+      getGame.style.display = "none";
+}

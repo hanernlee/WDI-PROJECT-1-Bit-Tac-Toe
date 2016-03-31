@@ -124,6 +124,35 @@ td:hover {
   display:inline-block;
 }
 
+#close {
+  color white;
+  vertical-align:top;
+  float:right;
+}
+
+#close:active {
+  position:relative;
+  top:2px;
+}
+
+#close:hover {
+  font-size:1.1em;
+}
+
+#closeMode {
+  color white;
+  vertical-align:top;
+  float:right;
+}
+
+#closeMode:active {
+  position:relative;
+  top:2px;
+}
+
+#closeMode:hover {
+  font-size:1.1em;
+}
 #scores {
   width: 50%;
   margin: 0 auto;
