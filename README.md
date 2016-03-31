@@ -46,7 +46,7 @@ Added class no-touch to element with hover
 ```
 class="no-touch"
 ```
-Pasted below script in app.js
+Added below script in app.js
 
 ```
 if (!("ontouchstart" in document.documentElement)) {
