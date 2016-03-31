@@ -25,6 +25,9 @@ var six = document.getElementById('c1');
 var seven = document.getElementById('c2');
 var eight = document.getElementById('c3');
 
+if ('ontouchstart' in document) {
+    Y.one('body').removeClass('no-touch');
+}
 //
   boardGame.addEventListener('click', function(event) {
         if (gameMode === 0) {
