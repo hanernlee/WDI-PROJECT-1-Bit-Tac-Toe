@@ -1,6 +1,4 @@
 
-console.log("hey");
-
 var gameMode = 0;
 
 var playerOneScore = 0;
@@ -341,7 +339,7 @@ var displayTurn = function () {
 }
 
 var computer = function () {
-      pokemonTwo = 'pikachu';
+      pokemonTwo = 'bulbasaur';
       var emptyBox = [];
       if (gameOver === 0) {
         if (turn === 1) {
