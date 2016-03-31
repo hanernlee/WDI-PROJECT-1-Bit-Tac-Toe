@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div id="container">
+    <h1>BIT TAC TOE</h1>
+
+    <div id = playerTurn>
+      <div class="playerNext" id="firstPlayer">P1's Turn</div>
+      <div class="playerNext" id="secondPlayer">P2's Turn</div>
+    </div>
+
+    <div id="boardContainer">
+      <table id='board' border="1">
+        <tr>
+          <td id ="a1"></td>
+          <td id ="a2"></td>
+          <td id="a3"></td>
+        </tr>
+        <tr>
+          <td id="b1"></td>
+          <td id="b2"></td>
+          <td id="b3"></td>
+        </tr>
+        <tr>
+          <td id="c1"></td>
+          <td id="c2"></td>
+          <td id="c3"></td>
+        </tr>
+      </table>
+
+
+      <div id="myModal" class = "modal">
+        <div class="modal-content">
+          <span id ="results"></span>
+        </div>
+        </div>
+
+        <div id="gameStyle" class = "modal">
+          <div class="modal-content">
+            <span id ="gameMode">
+              <button id="onePlayer">One Player</button>
+              <button id="twoPlayer">Two Players</button>
+            </span>
+          </div>
+          </div>
+
+          <button id="newGame">New Game</button>
+          <br />
+          <button id="avatar">Choose Avatar</button>
+          <button id="restart">Restart Scores</button>
+          <button id="game">Mode</button>
+
+
+
+      <div id="selectAva" class = "modal">
+        <div class="modal-content">
+          <img id="pikachu" src="images/pikachu.gif">
+          <img id="bulbasaur" src ="images/bulba.gif">
+          <img id="squirtle" src ="images/squirtle.gif">
+          <img id="charmander" src ="images/charmander.gif">
+          <span id ="character"></span>
+        </div>
+      </div>
+
+  </div>
+
+    <div id ="scores">
+      <div id ="playerScore">P1:
+        <span id="scoreOne">0</span>
+      </div>
+      <div id="playerScore">P2:
+        <span id="scoreTwo">0</span>
+      </div>
+    </div>
+
+  </div>
+  <script src="app.js" charset="utf-8"></script>
+</body>
+</html>
