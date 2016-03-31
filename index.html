@@ -12,8 +12,9 @@
     <h1>BIT TAC TOE</h1>
 
     <div id = playerTurn>
-      <div class="playerNext" id="firstPlayer">P1's Turn</div>
       <div class="playerNext" id="secondPlayer">P2's Turn</div>
+      <div class="playerNext" id="firstPlayer">P1's Turn</div>
+
     </div>
 
     <div id="boardContainer">
@@ -44,6 +45,7 @@
 
         <div id="gameStyle" class = "modal">
           <div class="modal-content">
+            <span id="closeMode">x</span>
             <span id ="gameMode">
               <button id="onePlayer">One Player</button>
               <button id="twoPlayer">Two Players</button>
@@ -53,7 +55,7 @@
 
           <button id="newGame">New Game</button>
           <br />
-          <button id="avatar">Choose Avatar</button>
+          <button id="avatar">Choose Pokemon</button>
           <button id="restart">Restart Scores</button>
           <button id="game">Mode</button>
 
@@ -61,6 +63,7 @@
 
       <div id="selectAva" class = "modal">
         <div class="modal-content">
+          <span id="close">x</span>
           <img id="pikachu" src="images/pikachu.gif">
           <img id="bulbasaur" src ="images/bulba.gif">
           <img id="squirtle" src ="images/squirtle.gif">
@@ -68,15 +71,14 @@
           <span id ="character"></span>
         </div>
       </div>
-
   </div>
 
     <div id ="scores">
-      <div id ="playerScore">P1:
-        <span id="scoreOne">0</span>
+      <div id ="playerScore">
+        <span>P1:<span id="scoreOne">0</span></span>
       </div>
-      <div id="playerScore">P2:
-        <span id="scoreTwo">0</span>
+      <div id="playerScore">
+        <span>P2:<span id="scoreTwo">0</span></span>
       </div>
     </div>
 
