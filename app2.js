@@ -30,14 +30,18 @@ var eight = document.getElementById('c3');
         if (gameMode === 0) {
           if (gameOver === 0) {
             if (event.target.tagName === 'TD') {
-              if (turn === 0) {
-                turn++;
-                displayTurn();
-                event.target.className = "X";
-                event.target.appendChild(newCharacterOne(pokemon));
-                console.log(event.target.id);
-                checkWinner();
-                computer();
+              if(event.target.className === 'X' || event.target.className === 'O') {
+                console.log("This is the same box!");
+              } else {
+                if (turn === 0) {
+                  turn++;
+                  displayTurn();
+                  event.target.className = "X";
+                  event.target.appendChild(newCharacterOne(pokemon));
+                  console.log(event.target.id);
+                  checkWinner();
+                  computer();
+                }
               }
             }
           } else {
@@ -363,7 +367,7 @@ var computer = function () {
             checkWinner();
             displayTurn();
           }
-          setTimeout (appendComputer , 2000);
+          setTimeout (appendComputer , 3000);
           }
         }
 }
