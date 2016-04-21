@@ -1,13 +1,13 @@
 # BIT TAC TOE
 ***
-Tic Tac Toe (or also noughts and crosses) is a two player game who take turns marking spaces in a 3x3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
+Tic Tac Toe (or also noughts and crosses) is a two player game where each player take turns marking spaces in a 3x3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
 ***
 
 ## Technologies
 
 1. HTML
 2. CSS
-3. JAVASCRIPT
+3. JavaScript
 
 ***
 
@@ -34,13 +34,13 @@ There are currently two modes for this game:
 
 ## Challenges
 
-In developing this web application, there were a lot of challenges that I faced. I was not entirely happy with the way my function was written to check for wins. Perhaps I could have used a loop and at the same time check for winning combinations.
+There were a lot of challenges that I faced in developing this web application. I was not entirely happy with the way my function was written to check for wins. Perhaps I could have used a loop and at the same time check for winning combinations for a dry'er code.
 
 Other challenges involved understanding how to append child image as well as playing around with modals. This project was definitely a good learning experience as a beginner.
 
 
 ###Touch Compatibility on iOS devices
-CSS:hover was causing a few issues when I loaded this on an iPhone, below code was added to remove hover ability when the device is touch capable
+CSS:hover was causing a few issues when I loaded this on a mobile device. Below code was added to remove hover ability when the device is touch capable.
 
 Added class no-touch to element with hover
 
