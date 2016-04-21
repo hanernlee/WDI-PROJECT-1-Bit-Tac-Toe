@@ -1,45 +1,42 @@
-# ABOUT THE PROJECT
+# BIT TAC TOE
+-------------------------------------------------------------------
 
-As part of the Week 3 WDI Program @ GA, everyone was required to create a game.
+Tic Tac Toe (or also noughts and crosses) is a two player game who take turns marking spaces in a 3x3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
+-------------------------------------------------------------------
+## Technologies
 
-## Technologies Used
-- HTML
-- CSS
-- JAVASCRIPT
-
+1. HTML
+2. CSS
+3. JAVASCRIPT
+-------------------------------------------------------------------
 ## Game Mechanics
 
-There are currently two modes in this game:
-- 1 Player Mode is the defaultMode (default Pokemon always Pikachu)
-- 2 Player Mode (default Pokemon always Bulbasaur)
+There are currently two modes for this game:
+- One Player Mode (default Pokemon selected is always Pikachu)
+- Two Player Mode
 
+![alt text](http://imgur.com/ro0G7gx)
 
-### 1 Player Mode
+### One Player Mode
 - Human Player is able to choose any starter Pokemon at any time of the game
 - Human Player always start first
 - Computer randomly selects an empty playable space
 
-### 2 Player Mode
+### Two Player Mode
 - Both Human Players are allowed to choose any starter Pokemon at any time of the game
-- Player One always starts first followed by Player Two in the next round (alternating turns)
+- Player One always starts first followed by Player Two in the next round (the turns alternate)
 - Player One is always Purple
 - Player Two is always Pink
+-------------------------------------------------------------------
+## Challenges
 
-### New Game
-- Refreshes the rounds but does not reset the scores
+In developing this web application, there were a lot of challenges that I faced. I was not entirely happy with the way my function was written to check for wins. Perhaps I could have used a loop and at the same time check for winning combinations.
 
-### Choose Pokemon
-- Allows Human Players to choose starter Pokemon
+Other challenges involved understanding how to append child image as well as playing around with modals. This project was definitely a good learning experience as a beginner.
 
-### Restart scores
-- Resets scores of both Players to 0
-
-### Mode
-- Allows user to switch modes at anytime.
-- Switching modes resets everything
 
 ###Touch Compatibility on iOS devices
-CSS:hover does not work on iOS devices, below code used to remove hover ability when user is on an iOS device
+CSS:hover was causing a few issues when I loaded this on an iPhone, below code was added to remove hover ability when the device is touch capable
 
 Added class no-touch to element with hover
 
@@ -53,12 +50,19 @@ if (!("ontouchstart" in document.documentElement)) {
     document.documentElement.className += "no-touch";
 }
 ```
+-------------------------------------------------------------------
+## Final Thoughts & Acknowledgements
 
-## Final Thoughts
-Overall, the project was very challenging but definitely worth the time. Perhaps at a later stage I will look into to creating a smarter AI. Special thanks to DT and Hugh for providing me with assistance!
+My very first front-end web application! I took on a slightly retro approach towards styling this app.
 
-Image Source: All Gif images were searched from Google
+Overall, the project was an awesome experience and I would do it again in a heartbeat with cleaner code the next time. Special thanks to [DT](https://github.com/epoch), [Matt](https://github.com/mattswann), [Hugh](https://github.com/hughfm) and the iterm8s class for all the assistance and guidance!
+
+Image Source: I do not own any of the gifs used
+-------------------------------------------------------------------
+###Links
 
 #### [Github Repo] (https://github.com/hanernlee/tictactoe)
 
-#### [The Game] (http://hanernlee.github.io/tictactoe/)
+#### [Play BitTacToe!] (http://hanernlee.github.io/WDI-PROJECT-1-Bit-Tac-Toe/)
+
+*This project was undertaken as part of the General Assembly WDI course.*
