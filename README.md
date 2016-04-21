@@ -14,7 +14,7 @@ There are currently two modes for this game:
 - One Player Mode (default Pokemon selected is always Pikachu)
 - Two Player Mode
 
-![alt text](http://imgur.com/ro0G7gx)
+![alt text](http://imgur.com/ro0G7gx "Screenshot")
 
 ### One Player Mode
 - Human Player is able to choose any starter Pokemon at any time of the game
@@ -56,7 +56,7 @@ My very first front-end web application! I took on a slightly retro approach tow
 
 Overall, the project was an awesome experience and I would do it again in a heartbeat with cleaner code the next time. Special thanks to [DT](https://github.com/epoch), [Matt](https://github.com/mattswann), [Hugh](https://github.com/hughfm) and the iterm8s class for all the assistance and guidance!
 
-Image Source: I do not own any of the gifs used
+*I do not own any of the gifs used*
 ***
 ###Links
 
