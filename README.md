@@ -27,6 +27,7 @@ There are currently two modes for this game:
 - Player One is always Purple
 - Player Two is always Pink
 ***
+
 ## Challenges
 
 In developing this web application, there were a lot of challenges that I faced. I was not entirely happy with the way my function was written to check for wins. Perhaps I could have used a loop and at the same time check for winning combinations.
