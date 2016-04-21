@@ -59,7 +59,7 @@ if (!("ontouchstart" in document.documentElement)) {
 
 ## Final Thoughts & Acknowledgements
 
-My very first front-end web application! I took on a slightly retro approach towards styling this app.
+This is my very first front-end web application! I wanted a slightly retro game approach, hence the styling of the app.
 
 Overall, the project was an awesome experience and I would do it again in a heartbeat with cleaner code the next time. Special thanks to [DT](https://github.com/epoch), [Matt](https://github.com/mattswann), [Hugh](https://github.com/hughfm) and the iterm8s class for all the assistance and guidance!
 
