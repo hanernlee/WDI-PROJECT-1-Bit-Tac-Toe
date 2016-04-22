@@ -69,7 +69,7 @@ Overall, the project was an awesome experience and I would do it again in a hear
 
 ###Links
 
-#### [Github Repo] (https://github.com/hanernlee/tictactoe)
+#### [GitHub Repo] (https://github.com/hanernlee/tictactoe)
 
 #### [Play BitTacToe!] (http://hanernlee.github.io/WDI-PROJECT-1-Bit-Tac-Toe/)
 
