@@ -71,7 +71,7 @@ td {
 }
 
 #newGame {
-  margin-top: 0.5em;
+  margin-top: 1em;
   font-size:2em;
   background-color: mediumslateblue;
   color:white;
@@ -84,7 +84,7 @@ td {
 }
 
 #avatar, #restart, #game {
-  margin-top: 1em;
+  margin-top: 2em;
   font-size:1em;
   background-color: #663399;
   color:white;
@@ -157,7 +157,7 @@ td {
   width: 50%;
   margin: 0 auto;
   text-align:center;
-  margin-top: 1em;
+  margin-top: 2em;
   font-family: 'Press Start 2P', cursive;
 }
 
