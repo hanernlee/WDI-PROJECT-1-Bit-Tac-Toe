@@ -263,6 +263,10 @@ space decendants*/
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
 /* Styles */
+  h1 {
+    margin-top:1.2em;
+  }
+
   #newGame {
     margin:0.5em;
     font-size:1.5em;
