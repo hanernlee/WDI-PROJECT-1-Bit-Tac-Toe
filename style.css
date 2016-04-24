@@ -24,7 +24,6 @@ h1 {
 #boardContainer {
   text-align:center;
   margin:0 auto;
-  margin-top:1em;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
   -khtml-user-select: none;    /* Konqueror */
@@ -72,7 +71,7 @@ td {
 }
 
 #newGame {
-  margin-top: 2em;
+  margin-top: 0.5em;
   font-size:2em;
   background-color: mediumslateblue;
   color:white;
@@ -85,7 +84,7 @@ td {
 }
 
 #avatar, #restart, #game {
-  margin-top: 2em;
+  margin-top: 1em;
   font-size:1em;
   background-color: #663399;
   color:white;
@@ -158,7 +157,7 @@ td {
   width: 50%;
   margin: 0 auto;
   text-align:center;
-  margin-top: 2em;
+  margin-top: 1em;
   font-family: 'Press Start 2P', cursive;
 }
 
