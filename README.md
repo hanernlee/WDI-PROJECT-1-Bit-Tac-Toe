@@ -1,82 +1,67 @@
-# WDI Conference
+# BIT TAC TOE
 
-## Overview
+<img src="http://i.imgur.com/2Oh1cV1.png" width="300"/>
 
-WDI Conference is a mock technology conference run by the students of General Assembly.
+Tic Tac Toe (or also noughts and crosses) is a two player game where each player take turns marking spaces in a 3x3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
 
-<img src="http://i.imgur.com/GkFvpnI.png" width="300">
+## Technologies
 
-## Objective
+1. HTML
+2. CSS
+3. JavaScript
 
-To build a website for a technology conference that included the following:
-- Location and conference information
-- Timetable and title of presentations/talks
-- Speakers profiles
-- The ability to purchase a ticket
-- Sponsors
+## Game Mechanics
 
-## Technologies used
+There are currently two modes for this game:
+- One Player Mode (default Pokemon selected is always Pikachu)
+- Two Player Mode
 
-1. Ruby On Rails
-2. JavaScript including the following libraries:
-  - Smoothscroll.js
-  - Handlebars.js
-  - Typed.js
-  - Backfix.js
-  - ClassyCountdown.js
-  - jQuery
-  - Ajax
-3. PostgreSQL
-4. HTML5
-5. Sass / CSS3
-6. Heroku hosting
+### One Player Mode
+- Human Player is able to choose any starter Pokemon at any time of the game
+- Human Player always start first
+- Computer randomly selects an empty playable space
 
+### Two Player Mode
+- Both Human Players are allowed to choose any starter Pokemon at any time of the game
+- Player One always starts first followed by Player Two in the next round (the turns alternate)
+- Player One is always Purple
+- Player Two is always Pink
 
-## Key Features
+## Challenges
 
-- Users can purchase tickets to the conference and will receive a confirmation email displaying their tickets with respective seat numbers
-- Users can sign up to apply to be a speaker for the conference
-- Administrator can log in to see amount of tickets sold as well as approve/reject applications from users to be a speaker
-- Administrator can add future events
-- Surprise Gimmick when clicking on "Sad Panda" in the Sponsors section (users with highest panda score may win a free ticket to the conference)
+There were a lot of challenges that I faced in developing this web application. I was not entirely happy with the way my function was written to check for wins. Perhaps I could have used a loop and at the same time check for winning combinations for a dry'er code.
 
-## Links
-
-Check out the site(best viewed in Chrome) [WDI CONF 2016](https://code-play-wdi-conference.herokuapp.com/)
-
-Dummy login details for access below:
-
-**Administrator**
-
-Email: emily@email.com
-Password: pudding
-
-**User**
-
-Email: pudding@ga.co
-Password: pudding
-
-## Team members
-
-| WDI CONF Team |
-| ------------- |
-| Bevin         |
-| Emily         |
-| Leo           |
-| Keith         |
-| Chris         |
+Other challenges involved understanding how to append child image as well as playing around with modals. This project was definitely a good learning experience as a beginner.
 
 
-Links to our GitHub accounts:
-- [Bevin](https://github.com/bevieboo)
-- [Emily](https://github.com/EmilyBie)
-- [Leo](https://github.com/YehongYou)
-- [Keith](https://github.com/keitheous)
-- [Chris](https://github.com/hanernlee)
+###Touch Compatibility on iOS devices
+CSS:hover was causing a few issues when I loaded this on a mobile device. Below code was added to remove hover ability when the device is touch capable.
 
+Added class no-touch to element with hover
 
-## Acknowledgements
+```
+class="no-touch"
+```
+Added below script in app.js
 
-Thanks to [DT](https://github.com/epoch), [Matt](https://github.com/mattswann), [JB](https://github.com/bairstow) and the iterm8s class for all the assistance and guidance!
+```
+if (!("ontouchstart" in document.documentElement)) {
+    document.documentElement.className += "no-touch";
+}
+```
+
+## Final Thoughts & Acknowledgements
+
+This is my very first front-end web application! I wanted a slightly retro game approach, hence the styling of the app.
+
+Overall, the project was an awesome experience and I would do it again in a heartbeat with cleaner code the next time. Special thanks to [DT](https://github.com/epoch), [Matt](https://github.com/mattswann), [Hugh](https://github.com/hughfm) and the iterm8s class for all the assistance and guidance!
+
+*I do not own any of the gifs used*
+
+###Links
+
+#### [GitHub Repo] (https://github.com/hanernlee/tictactoe)
+
+#### [Play BitTacToe!] (http://hanernlee.github.io/WDI-PROJECT-1-Bit-Tac-Toe/)
 
 *This project was undertaken as part of the General Assembly WDI course.*
