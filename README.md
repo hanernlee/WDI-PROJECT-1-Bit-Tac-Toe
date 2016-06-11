@@ -1,6 +1,6 @@
 # BIT TAC TOE
 
-<a href="http://imgur.com/2Oh1cV1"><img src="http://i.imgur.com/2Oh1cV1.png" title="source: imgur.com" /></a>
+<img src="http://i.imgur.com/2Oh1cV1.png" width="300" />
 
 Tic Tac Toe (or also noughts and crosses) is a two player game where each player take turns marking spaces in a 3x3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
 
