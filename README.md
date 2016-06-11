@@ -17,7 +17,7 @@ There are currently two modes for this game:
 - One Player Mode (default Pokemon selected is always Pikachu)
 - Two Player Mode
 
-<img src="http://i.imgur.com/ro0G7gx.png" width="300">
+<img src="http://i.imgur.com/ro0G7gx.png" width="500">
 
 ### One Player Mode
 - Human Player is able to choose any starter Pokemon at any time of the game
